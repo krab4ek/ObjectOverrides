@@ -25,7 +25,29 @@ namespace ObjectOverrides
 
         public override string ToString() => $"[First name: {FirstName}; Last name: {LastName}; Age: {Age}]";
 
+        public override bool Equals(object? obj) => obj?.ToString()==ToString();
+        
 
+        //public override bool Equals(object? obj)
+        //{
+        //    if (obj is Person && obj != null)
+        //    {
+        //        Person temp;
+        //        temp = (Person)obj;
+        //        if (temp.FirstName == this.FirstName
+        //            && temp.LastName == this.LastName
+        //            && temp.Age == this.Age)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    return false;
+
+        //}
 
     }
 }
