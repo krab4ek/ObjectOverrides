@@ -42,9 +42,16 @@ Console.WriteLine();
 
 
 
-
+StaticMemberOfObject();
 
 Console.ReadLine();
 
 
 
+static void StaticMemberOfObject()
+{
+    Person per3 = new Person("Sally", "O`Sullivan", 56);
+    Person per4 = new Person("Sally", "O`Sullivan", 56);
+    Console.WriteLine($"Per3 and Per4 have same state: {object.Equals(per3, per4)}");
+    Console.WriteLine($"Per3 and Per4 are pointing to same object: {object.ReferenceEquals(per3, per4)}");
+}
