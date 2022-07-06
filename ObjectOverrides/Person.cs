@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectOverrides
+﻿namespace ObjectOverrides
 {
     internal class Person
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public int Age { get; set; } = 0;
+        public string SSN { get; set; } = string.Empty;
 
+        public Person(string firstName, string lastName, int age, string ssn)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            SSN = ssn;
+        }
         public Person(string firstName, string lastName, int age)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
+            
         }
         public Person()
         {
@@ -25,8 +28,8 @@ namespace ObjectOverrides
 
         public override string ToString() => $"[First name: {FirstName}; Last name: {LastName}; Age: {Age}]";
 
-        public override bool Equals(object? obj) => obj?.ToString()==ToString();
-        
+        public override bool Equals(object? obj) => obj?.ToString() == ToString();
+
 
         //public override bool Equals(object? obj)
         //{
@@ -48,6 +51,13 @@ namespace ObjectOverrides
         //    return false;
 
         //}
+
+        public override int GetHashCode()
+        {
+            return Age.GetHashCode();
+        }
+
+
 
     }
 }

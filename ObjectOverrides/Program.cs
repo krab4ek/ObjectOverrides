@@ -1,7 +1,7 @@
 ﻿using ObjectOverrides;
 
 Console.WriteLine("***** Fun with System.Object *****\n");
-Person p1 = new Person("Andrei","Covali",32);
+Person p1 = new Person("Andrei", "Covali", 32);
 Person p3 = new Person();
 Console.WriteLine($"ToString: {p1.ToString()}");
 Console.WriteLine($"Hash code: {p1.GetHashCode()}");
@@ -18,11 +18,33 @@ else
 {
     Console.WriteLine("Ne Ekvivalenti");
 
-
-
-
-    Console.ReadLine();
 }
+
+var per1 = new Person("Homer", "Simpson", 50, "777-888-999");
+var per2 = new Person("Homer", "Simpson", 50, "777-888-999");
+
+Console.WriteLine($"per1.ToString() = {per1.ToString}");
+Console.WriteLine($"per2.ToString() = {per2.ToString}");
+
+Console.WriteLine($"per1 = per2: {per1.Equals(per2)}");
+
+Console.WriteLine($"Same hash code: {per1.GetHashCode() == per2.GetHashCode()}");
+Console.WriteLine();
+
+per2.Age = 45;
+Console.WriteLine($"per1.ToString() = {per1.ToString}");
+Console.WriteLine($"per2.ToString() = {per2.ToString}");
+Console.WriteLine($"per1 = per2: {per1.Equals(per2)}");
+
+Console.WriteLine($"Same hash code: {per1.GetHashCode() == per2.GetHashCode()}");
+Console.WriteLine();
+
+
+
+
+
+
+Console.ReadLine();
 
 
 
